@@ -13,8 +13,10 @@ class ContatoForm(forms.Form):
         if '@gmail.com' in email:
             self.add_error('email', 'Provedor de e-mail não suportado (gmail.com)')
             #testa palavras não permitidas na mensagem
-            palavras = ['problema','defeito','erro']
-            for palavra in palavras:
-                if palavra in mensagem.lower():
-                    self.add_error('mensagem', 'O erro é teu otario')
-            return dados
+            
+        palavras = ['problema','defeito','erro']
+        for palavra in palavras:
+            if palavra in mensagem.lower():
+                self.add_error('mensagem', 'O erro é teu otario')
+        
+        return dados

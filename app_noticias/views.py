@@ -1,4 +1,4 @@
-from .models import Noticia
+from .models import Noticia, MensagemDeContato
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from django.http import HttpResponse
@@ -55,4 +55,4 @@ class ContatoView(FormView):
 
 
 class ContatoSucessoView(TemplateView):
-    template_name = 'app_noticia/contato_sucesso.html'
+    template_name = 'app_noticias/contato_sucesso.html'
